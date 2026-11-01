@@ -1,0 +1,47 @@
+class SinglyNode:
+    def __init__(self, val, next = None):
+            self.val = val
+            self.next = next
+
+    def __str__(self):
+            return str(self.val)
+
+
+Head = SinglyNode(1) # head start hota ha
+A = SinglyNode(3) # A is the first node
+B = SinglyNode(5) # B is the second node
+C = SinglyNode(7) # C is the third node
+
+# to connect these nodes together we will use the next pointer of each node
+Head.next = A
+A.next = B
+B.next = C
+
+# curr = Head
+# while curr:
+#         print(curr,end=" ") #end attribute is used to print in the same line
+#         curr = curr.next
+
+
+# # Display Linked List
+# def display(Head):
+#         curr = Head
+#         elements = []
+#         while curr:
+#             elements.append(str(curr.val))
+#             curr = curr.next
+#         print(" -> ".join(elements))
+
+# display(Head)    
+
+#Searching for a node in the linked list
+def search(Head, val):
+    curr = Head
+    while curr:
+        if val == curr.val:
+            return True
+        curr = curr.next
+      
+    return False
+
+print(search(Head,5))
